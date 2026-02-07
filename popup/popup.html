@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransGemma 翻译</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                <span>TransGemma</span>
+            </div>
+        </header>
+
+        <div class="language-row">
+            <select id="sourceLang">
+                <option value="auto">自动检测</option>
+                <option value="Chinese">中文</option>
+                <option value="English">英语</option>
+                <option value="Japanese">日语</option>
+                <option value="Korean">韩语</option>
+            </select>
+            <button class="swap-btn" id="swapLangs">⇄</button>
+            <select id="targetLang">
+                <option value="English">英语</option>
+                <option value="Chinese">中文</option>
+                <option value="Japanese">日语</option>
+                <option value="Korean">韩语</option>
+            </select>
+        </div>
+
+        <div class="translate-area">
+            <textarea id="inputText" placeholder="输入或粘贴要翻译的文本..."></textarea>
+            <div class="output-area" id="outputText">
+                <span class="placeholder">翻译结果</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="copy-btn" id="copyBtn" title="复制译文">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- 授权状态和使用限制 -->
+        <div class="license-section">
+            <div id="licenseStatus" class="license-status">加载中...</div>
+            <div class="license-input-row" id="licenseInputRow">
+                <input type="text" id="licenseCode" placeholder="输入授权码 TG-XXXX-XXXX-XXXX-XXXX">
+                <button id="activateBtn">激活</button>
+            </div>
+            <div id="licenseMessage" class="license-message"></div>
+            <div class="contact-info">💬 购买授权码请联系微信：<strong>zouclang</strong></div>
+        </div>
+
+        <footer class="popup-footer">
+            <label class="toggle">
+                <input type="checkbox" id="hoverToggle" checked>
+                <span>Ctrl+悬停翻译</span>
+            </label>
+            <label class="toggle">
+                <input type="checkbox" id="selectToggle" checked>
+                <span>划词翻译</span>
+            </label>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
